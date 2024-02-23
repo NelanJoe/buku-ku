@@ -99,25 +99,6 @@ header {
     & h1 > span {
       color: var(--link-color);
     }
-
-    & .form-search-book {
-      display: relative;
-      padding: 0.2rem 0.8rem;
-      border: 2px solid var(--link-color);
-      border-radius: 0.4rem;
-    }
-
-    & .search-icon {
-      width: 15px;
-      height: 15px;
-    }
-
-    & .form-input-search-book {
-      outline: none;
-      border: none;
-      padding: 0.5rem 0.5rem;
-      background-color: var(--background-color);
-    }
   }
 
   & .header-right {
