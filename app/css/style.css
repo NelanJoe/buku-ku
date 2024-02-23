@@ -1,0 +1,370 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsla(210, 10%, 8%, 0.847);
+  --link-color: hsl(352, 66%, 55%);
+  color-scheme: light;
+}
+
+[data-theme="light"] {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsla(210, 10%, 8%, 0.847);
+  --link-color: hsl(352, 66%, 55%);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background-color: hsl(198, 16%, 15%);
+  --text-color: hsl(180, 7%, 97%);
+  --link-color: hsl(352, 66%, 55%);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(198, 16%, 15%);
+    --text-color: hsl(180, 7%, 97%);
+    --link-color: hsl(352, 66%, 55%);
+    color-scheme: dark;
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  line-height: 1.1;
+}
+
+img,
+picture,
+video,
+canvasm,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Header Styles */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: var(--background-color);
+  border-bottom: 2px solid var(--text-color);
+
+  & nav {
+    max-width: 58rem;
+    margin-inline: auto;
+    height: 3.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & h1 > span {
+      color: var(--link-color);
+    }
+
+    & .form-search-book {
+      display: relative;
+      padding: 0.2rem 0.8rem;
+      border: 2px solid var(--link-color);
+      border-radius: 0.4rem;
+    }
+
+    & .search-icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    & .form-input-search-book {
+      outline: none;
+      border: none;
+      padding: 0.5rem 0.5rem;
+      background-color: var(--background-color);
+    }
+  }
+
+  & .header-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media only screen and (max-width: 767.98px) {
+    & nav {
+      margin: 0 1rem;
+    }
+  }
+}
+
+/* Button Dark Mode */
+
+#theme-toggle {
+  outline: none;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--text-color);
+  border-radius: 0.5rem;
+  background-color: var(--background-color);
+}
+
+[data-theme="light"] {
+  .fa-moon {
+    display: block;
+  }
+
+  .fa-sun {
+    display: none;
+  }
+}
+
+[data-theme="dark"] {
+  .fa-sun {
+    display: block;
+  }
+
+  .fa-moon {
+    display: none;
+  }
+}
+
+/* Main Styles */
+
+main {
+  padding: 5rem 0;
+
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media only screen and (max-width: 767.98px) {
+  main {
+    padding-top: 4rem;
+    margin: 0 1rem;
+  }
+}
+
+.wrapper {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border: 2px dashed var(--text-color);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.hero {
+  width: 50%;
+
+  & h2 {
+    margin-bottom: 1rem;
+  }
+
+  & p {
+    text-align: justify;
+  }
+
+  & span {
+    color: var(--link-color);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+
+  & .form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  & .form-input > input {
+    outline: none;
+    border: 2px solid var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 0.3rem;
+    padding: 0.6rem 0.4rem;
+  }
+
+  & .form-input > textarea {
+    outline: none;
+    border: 2px solid var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 0.3rem;
+    padding: 0.6rem 0.4rem;
+  }
+
+  & .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  & button {
+    width: 100%;
+    outline: none;
+    border: 2px solid var(--text-color);
+    border-radius: 0.4rem;
+    padding: 10px 5px;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    background-color: var(--link-color);
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .hero {
+    width: 100%;
+  }
+}
+
+.books {
+  margin-top: 2rem;
+}
+
+.books > h2 {
+  text-decoration: underline;
+  margin-bottom: 1.2rem;
+}
+
+.books-completed,
+.books-uncompleted {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: 0.75rem;
+}
+
+.book-item {
+  padding: 1rem;
+  border: 2px solid var(--text-color);
+  border-radius: 0.4rem;
+}
+
+.book-item__title {
+  margin-bottom: 0.5rem;
+}
+
+.book-item__subtitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 0.4rem;
+}
+
+.book-item__subtitle--author,
+.book-item__subtitle--year {
+  font-weight: bold;
+}
+
+.book-item__description {
+  font-size: 14px;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.book-item__action {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.2rem;
+
+  & button {
+    width: 100%;
+    outline: none;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.5rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+  }
+}
+
+.book-item__action--done {
+  border: 2px solid var(--text-color);
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(170, 64%, 38%);
+
+  cursor: pointer;
+}
+
+.book-item__action--undone {
+  border: 2px solid var(--text-color);
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(258, 97%, 55%);
+
+  cursor: pointer;
+}
+
+.book-item__action--delete {
+  border: 2px solid var(--text-color);
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 73%, 54%);
+
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .books-completed,
+  .books-uncompleted {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.not-found {
+  font-style: italic;
+  color: hsl(0, 100%, 50%);
+}
+
+footer {
+  text-align: center;
+  margin: 1.2rem 0;
+}

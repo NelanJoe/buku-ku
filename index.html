@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buku Ku</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d806549cd8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./app/css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="header-left">
+          <h1>Buku<span>Ku</span></h1>
+          <form id="form-search-book" class="form-search-book">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input
+              class="form-input-search-book"
+              id="form-input-search-book"
+              type="text"
+              placeholder="Search book"
+            />
+          </form>
+        </div>
+        <div class="header-right">
+          <button id="theme-toggle" aria-label="Enable dark theme">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- End Header -->
+
+    <!-- Main Content -->
+    <main>
+      <section class="wrapper">
+        <div class="hero">
+          <h2><span>Buku</span>Ku</h2>
+          <p>
+            BukuKu adalah platform Simpan buku digital. Mulai simpan daftar
+            bukumu sekarang! agar tidak terlupa saat membacanya kembali.
+          </p>
+        </div>
+        <form id="form-book" class="form">
+          <div class="form-input">
+            <label for="form-input-title">Judul</label>
+            <input
+              type="text"
+              id="form-input-title"
+              placeholder="Harry Potter"
+            />
+          </div>
+          <div class="form-input">
+            <label for="form-input-author">Penulis</label>
+            <input
+              type="text"
+              id="form-input-author"
+              placeholder="J.K Rowling"
+            />
+          </div>
+          <div class="form-input">
+            <label for="form-input-year">Tahun</label>
+            <input type="number" id="form-input-year" placeholder="1997" />
+          </div>
+          <div class="form-input">
+            <label for="form-input-description">Deskripsi</label>
+            <textarea
+              name="description"
+              id="form-input-description"
+              cols="30"
+              rows="10"
+              placeholder="Harry Potter adalah seri tujuh novel fantasi yang dikarang oleh penulis Inggris J. K. Rowling."
+            ></textarea>
+          </div>
+          <div class="form-checkbox">
+            <label for="form-input-iscompleted">Sudah selesai dibaca?</label>
+            <input type="checkbox" id="form-input-iscompleted" />
+          </div>
+          <button>Simpan</button>
+        </form>
+      </section>
+
+      <section class="books">
+        <h2>Buku belum selesai dibaca.</h2>
+        <div id="books-uncompleted" class="books-uncompleted"></div>
+      </section>
+
+      <section class="books">
+        <h2>Buku sudah selesai dibaca.</h2>
+        <div id="books-completed" class="books-completed"></div>
+      </section>
+    </main>
+    <!-- End Main Content -->
+
+    <!-- Footer -->
+    <footer></footer>
+    <!-- End Footer -->
+
+    <script src="./app/js/script.js"></script>
+    <script src="./app/js/theme.js"></script>
+  </body>
+</html>
