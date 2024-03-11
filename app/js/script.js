@@ -130,6 +130,7 @@ const addBook = () => {
     description,
     isCompleted,
   };
+
   books.push(newBook);
 
   newDispatchEvent(RENDER_EVENT);

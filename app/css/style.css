@@ -68,6 +68,7 @@ body {
   background-color: var(--background-color);
   color: var(--foreground-color);
   font-family: "Plus Jakarta Sans", sans-serif;
+  transition: color 0.3s, background-color 0.3s ease-in;
 }
 
 /* Header Styles */
